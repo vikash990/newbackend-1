@@ -12,7 +12,7 @@ app.use(
         extended:false
     })
 )
-const mongoURI='mongodb+srv://devikTech:9931320688v@cluster0-koncr.mongodb.net/test?retryWrites=true&w=majority';
+const mongoURI='mongodb://localhost:27017/mernloginregistration'
 mongoose.connect(
     mongoURI,
     {
