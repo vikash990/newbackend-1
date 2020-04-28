@@ -4,6 +4,7 @@ var bodyParser=require('body-parser');
 var app=express();
 const mongoose=require('mongoose');
 const port = process.env.NODE_ENV === 'production' ? (process.env.PORT || 80) : 4000;
+const path = require(“path”);
 
 app.use(bodyParser.json())
 app.use(cors())
@@ -12,6 +13,7 @@ app.use(
         extended:false
     })
 )
+app.use(express.static(path.join(__dirname, “client/build”)))
 const mongoURI='mongodb://localhost:27017/mernloginregistration'
 mongoose.connect(
     mongoURI,
